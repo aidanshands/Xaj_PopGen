@@ -1,0 +1,11 @@
+# Introduction {#intro}
+
+The objective of this research is to characterize the population structure and prevalence of copper resistance of the walnut blight pathogen, _Xanthomonas arboricola_ pv. _juglandis_ ( _Xaj_ ) collected in central and Northern California between the years of 1994 to 2019. Additionally, we are interested in elucidating the type III secretion system effector (T3E) diversity and assessing where the Californian _Xaj_ population fits in a global context. We also sequenced 20 strains of _Xanthomonas arboricola_ pv. _pruni_ ( _Xap_ ), the causal agent of bacterial spot of almond, and included those in some of the analyses. 
+
+## Hypotheses 
+
+- Genes associated with and/or responsible for copper resistance are prevalent in the CA _Xanthomonas arboricola_ pv. _juglandis_ population and correlate
+with the respective copper-sensitivity phenotype _in vitro_.
+- _Xaj_ and _Xap_ exhibit variation in type III secretion system effector repertoires.
+- CA _Xaj_ strains form distinct genetic clusters when compared with other global strains. 
+- The CA _Xaj_ population does not encode any plasmids. 
