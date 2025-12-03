@@ -13,11 +13,11 @@ fastp -i $READ1 -I $READ2 \
 We followed these steps for de novo genome assembly and annotation:
 1. De novo assembly using Platanus_B v1.3.2 (Kajitani et al. 2020).
 2. Generate assembly stats via QUAST v5.1.0rc1 (Gurevich et al. 2013).
-3. Scaffold contigs using Ragout v2.3 (Kolmogorov et al. 2014).
-4. Polish scaffolds with Pilon (Walker et al. (2014)).
-5. Assess completeness and contamination with CheckM (Parks et al. 2015).
-6. Annotate with NCBI PGAP (Tatusova et al. 2016). 
-7. Assemble plasmids using MOB-suite v3.1.9 (Robertson and Nash 2018)
+3. Scaffold contigs using Ragout v.2.3 (Kolmogorov et al. 2014).
+4. Polish scaffolds with Pilon v.1.24(Walker et al. (2014)).
+5. Assess completeness and contamination with CheckM v.1.2.1(Parks et al. 2015).
+6. Annotate with NCBI PGAP v.2024-07-18.build7555(Tatusova et al. 2016). 
+7. Assemble plasmids using MOB-suite v3.1.9 (Robertson and Nash 2018).
 
 ### Platanus_B
 ``` bash
