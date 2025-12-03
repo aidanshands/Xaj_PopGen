@@ -56,7 +56,7 @@ java -jar -Xmx64G $PILONJAR --genome "${STRAIN}_scaffolds.fasta" \
 
 ### CheckM
 ```bash
-# CheckM v. 1.2.1
+# CheckM v.1.2.1
 checkm taxonomy_wf -t 16 genus Xanthomonas -x fasta "$CONTIGS" "$OUTDIR/CheckM_Tax_Contigs"
 ```
 
@@ -128,7 +128,7 @@ iqtree2 -s "$ALIGNMENT" -mem 32G -T AUTO -m "$MODEL" -B 1000 --prefix "$IQDIR/IQ
 
 ## RhierBAPS
 ``` r
-# RhierBAPS v1.1.4 
+# RhierBAPS v.1.1.4 
 library(rhierbaps)
 
 # Resource: https://github.com/gtonkinhill/rhierbaps
@@ -151,7 +151,7 @@ write.csv(hb.results$partition.df, file = file.path("Outputs/CA_XAJ_115_hierbaps
 
 ### tBLASTn
 ```bash
-# ncbi-blast/2.16.0+ 
+# ncbi-blast v.2.16.0+ 
 makeblastdb -in $GENOMEDIR/$STRAIN.fna -input_type fasta -dbtype nucl
 
 # alignment output
