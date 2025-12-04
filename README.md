@@ -138,7 +138,6 @@ Fasta = "CA_XAJ_CFML.filtered.fasta"
 snp.matrix = load_fasta(Fasta)
 
 # Running hierBAPS
-# No difference in n.pops = 20
 hb.results = hierBAPS(snp.matrix, max.depth = 2, n.pops = 20, quiet = TRUE, n.cores = 8)
 
 # save the partition file
