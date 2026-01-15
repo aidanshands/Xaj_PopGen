@@ -119,6 +119,11 @@ ClonalFrameML "$INDIR/parsnp.tree" "$INDIR/parsnp.xmfa" "$OUTDIR/CA_XAJ_115_v2_C
 # ModelFinder Accessory 
 iqtree2 -s "$ALIGNMENT" -mem 32G -T AUTO -m MFP --prefix "$MFDIRECTORY/MFout"
 
+# Substitution models used
+# CA_XAJ: HKY+F+I 
+# CA_XAJ and 24 NCBI RefSeq: TVM+F+G4
+# CA_XAJ, 24 NCBI RefSeq, and Xhg: TVM+F+G4 
+
 # Phylogenetic reconstruction
 # with outgroup
 iqtree2 -s "$ALIGNMENT" -mem 32G -T AUTO -m "$MODEL" -B 1000 -o "$OUTGROUP" --prefix "$IQDIR/IQout"
