@@ -15,7 +15,7 @@ We followed these steps for de novo genome assembly and annotation:
 2. Generate assembly stats via QUAST v5.1.0rc1 (Gurevich et al. 2013).
 3. Scaffold contigs using Ragout v.2.3 (Kolmogorov et al. 2014).
 4. Polish scaffolds with Pilon v.1.24(Walker et al. 2014).
-5. Assess completeness and contamination with CheckM v.1.2.1(Parks et al. 2015).
+5. Assess completeness and contamination with CheckM v.1.2.1(Parks et al. 2015) and BUSCO v6.0.0 (Tegenfeldt et al. 2025).
 6. Annotate with NCBI PGAP v.2024-07-18.build7555(Tatusova et al. 2016). 
 7. Assemble plasmids using MOB-suite v3.1.9 (Robertson and Nash 2018).
 
@@ -176,47 +176,6 @@ tblastn -query $T3SSE \
 -max_target_seqs 5 \
 -max_hsps 5 \
 -outfmt "6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore qlen slen"
-```
-
-### Filter tBLASTn 
-
-``` python
-import os
-import pandas as pd
-
-# Define the root directory containing all the subdirectories with Sample.txt files
-root_dir = 'Volumes/UCR/Postdoc/XAJ/Effectors/tBLASTn'
-
-# Define the column headers
-columns = ['qseqid', 'sseqid', 'pident', 'length', 'mismatch', 'gapopen', 
-           'qstart', 'qend', 'sstart', 'send', 'evalue', 'bitscore', 'qlen', 'slen']
-
-# Loop through each subdirectory in the root directory
-for subdir in os.listdir(root_dir):
-    subdir_path = os.path.join(root_dir, subdir)
-    
-    # Check if it's a directory
-    if os.path.isdir(subdir_path):
-        sample_file_path = os.path.join(subdir_path, f'{subdir}.txt')
-        
-        # Check if the Sample.txt file exists in the subdirectory
-        if os.path.isfile(sample_file_path):
-            # Read the tab-delimited file
-            df = pd.read_csv(sample_file_path, sep='\t', header=None, names=columns)
-            
-            # Apply the first filter: evalue $\leq 1e-50$
-            filter1 = df['evalue'] <= 1e-50
-            
-            # Apply both filters
-            filtered_df = df[filter1]
-            
-            # Define the output file path
-            output_file_path = os.path.join(subdir_path, f'{subdir}.tBLASTn.filtered.v3.txt')
-            
-            # Write the filtered data to a new file with headers
-            filtered_df.to_csv(output_file_path, sep='\t', index=False, header=True)
-
-print("Filtering complete.")
 ```
 
 ## DeepSecE 
